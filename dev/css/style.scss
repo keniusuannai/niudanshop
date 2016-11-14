@@ -1,70 +1,10 @@
 @charset "utf-8";
-
-@function px($size) {
-  @return ($size/100) + rem
+$designWidth : 640;
+@function px( $px ){
+  @return $px*320/$designWidth/20 + rem;
 }
 
 @import "spriterem";
-
-@media (min-width: 320px) {
-  html {
-    font-size: 50px;
-  }
-}
-
-@media (min-width: 360px) {
-  html {
-    font-size: 56.25px;
-  }
-}
-
-@media (min-width: 375px) {
-  html {
-    font-size: 58.59375px;
-  }
-}
-
-@media (min-width: 410px) {
-  html {
-    font-size: 64.0625px;
-  }
-}
-
-@media (min-width: 414px) {
-  html {
-    font-size: 64.6875px;
-  }
-}
-
-@media (min-width: 435px) {
-  html {
-    font-size: 67.96875px;
-  }
-}
-
-@media (min-width: 470px) {
-  html {
-    font-size: 73.4375px;
-  }
-}
-
-@media (min-width: 500px) {
-  html {
-    font-size: 78.125px;
-  }
-}
-
-@media (min-width: 520px) {
-  html {
-    font-size: 81.25px;
-  }
-}
-
-@media (min-width: 540px) {
-  html {
-    font-size: 84.375px;
-  }
-}
 
 /* CSS reset */
 body {
@@ -92,12 +32,14 @@ fieldset, img {
   border: 0;
 }
 
-a {
+a,a:active {
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-
+a:active{
+  opacity:.9;
+}
 /* 要注意表单元素并不继承父级 font 的问题 */
-
 input, select, img {
   vertical-align: middle
 }
@@ -193,7 +135,7 @@ html, body {
 .m-header .headimg {
   position: absolute;
   top: px(275);
-  right: px(23);
+  right: px(24);
   border-radius: 50%;
   width: px(97);
   height: px(97);
@@ -211,15 +153,18 @@ html, body {
 }
 
 .m-header .ball {
-  width: px(362);
+  width: px(354);
   height: px(214);
   position: absolute;
   top: px(370);
   left: 50%;
-  margin-left: px(-178);
+  margin-left: px(-176);
   background: url(../images/ball.png) no-repeat;
   background-size: cover;
+  overflow: hidden;
+  border-radius: px(100);
   animation: ball 1s steps(1, start) infinite;
+  -webkit-animation: ball 1s steps(1, start) infinite;
 }
 
 @keyframes ball {
@@ -242,7 +187,26 @@ html, body {
     background-position: px(-1810) 0;
   }
 }
-
+@-webkit-keyframes ball {
+  0% {
+    background-position: 0 0;
+  }
+  16.7% {
+    background-position: px(-362) 0;
+  }
+  33.3% {
+    background-position: px(-724) 0;
+  }
+  50% {
+    background-position: px(-1086) 0;
+  }
+  66.73% {
+    background-position: px(-1448) 0;
+  }
+  83.43% {
+    background-position: px(-1810) 0;
+  }
+}
 .game-box {
   position: absolute;
   top: px(618);
@@ -374,7 +338,7 @@ html, body {
       width: px(150);
       height: px(50);
       overflow: hidden;
-      margin: 0 auto;
+      margin: px(6) auto 0;
       color: #a84001;
       text-align: center;
       font: px(22)/1.2 "Microsoft YaHei";
@@ -398,7 +362,7 @@ html, body {
     li {
       float: left;
       width: px(126);
-      margin: 0 px(35) px(35) 0;
+      margin: 0 px(35) px(30) 0;
     }
     img {
       width: px(126);
@@ -413,6 +377,7 @@ html, body {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      margin-top:px(6);
     }
   }
 }
@@ -425,7 +390,7 @@ html, body {
   margin: px(10) auto;
   .guize-list {
     padding: px(90) 0 0 px(90);
-    width: px(405);
+    width: px(420);
     counter-reset: sectioncounter;
     li {
       color: #a84001;
@@ -498,6 +463,7 @@ html, body {
   top: 0;
   left: 0;
   z-index: 100;
+  display: none;
 }
 
 .dlg .mask {

@@ -33,8 +33,8 @@ $spritesheet: width height image $spritesheet-sprites;
             }
             @mixin btn-pack {
                 background-position: -319/(158-783)*100% -170/(57-607)*100%;;
-                width: px(158);
-                height: px(57);
+                width: px(160);
+                height: px(58);
             }
             @mixin dlg_sell {
                 background-position: 0 0;
