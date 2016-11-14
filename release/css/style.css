@@ -1,0 +1,481 @@
+@charset "UTF-8";
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+.game-box .boardcast .icon, .game-box .btn-yxdp, .game-box .btn-download, .game-box .btn-niudan, .game-box .btn-buy, .game-box .game-info .navigation, .g-libao .btn-pack, .g-canyu .icon-canyu, .g-footer .icon, .dlg-sell .dlg-header, .dlg-sell .niubi-list .icon-niubi, .dlg-sell .niubi-list .icon-glow {
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  background-size: 7.83rem 6.07rem; }
+
+@media (min-width: 320px) {
+  html {
+    font-size: 50px; } }
+
+@media (min-width: 360px) {
+  html {
+    font-size: 56.25px; } }
+
+@media (min-width: 375px) {
+  html {
+    font-size: 58.59375px; } }
+
+@media (min-width: 410px) {
+  html {
+    font-size: 64.0625px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 64.6875px; } }
+
+@media (min-width: 435px) {
+  html {
+    font-size: 67.96875px; } }
+
+@media (min-width: 470px) {
+  html {
+    font-size: 73.4375px; } }
+
+@media (min-width: 500px) {
+  html {
+    font-size: 78.125px; } }
+
+@media (min-width: 520px) {
+  html {
+    font-size: 81.25px; } }
+
+@media (min-width: 540px) {
+  html {
+    font-size: 84.375px; } }
+
+/* CSS reset */
+body {
+  background-color: #f4f4f4;
+  position: relative; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/*内外边距通常让各个浏览器样式的表现位置不同*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  padding: 0;
+  margin: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset, img {
+  border: 0; }
+
+a {
+  text-decoration: none; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+input, select, img {
+  vertical-align: middle; }
+
+input, select {
+  outline: none; }
+
+input, select, textarea {
+  font-size: 100%; }
+
+ul, ol {
+  list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; }
+
+address, cite, dfn, em, var {
+  font-style: normal; }
+
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {
+  border: 0;
+  font-variant: normal; }
+
+/* 去除默认边框 */
+fieldset, img {
+  border: 0; }
+
+/*重排左对齐*/
+caption, th {
+  text-align: left; }
+
+/*清除浮动*/
+.clearfix:after {
+  content: "";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+.clear {
+  clear: both; }
+
+html, body {
+  background: url(../images/body_bg.jpg) repeat;
+  width: 100%;
+  height: 100%; }
+
+.g-header {
+  background: url(../images/head_bg_1.jpg) no-repeat center top;
+  background-size: contain; }
+
+.m-header {
+  background: url(../images/head_bg_2.jpg) no-repeat center 2.26rem;
+  background-size: contain;
+  height: 9.13rem;
+  position: relative; }
+
+.m-header .canyu {
+  position: absolute;
+  width: 2.39rem;
+  height: 0.49rem;
+  border-radius: 0.25rem;
+  background: #6631bb;
+  box-shadow: inset 0 0 0.05rem 0.01rem #350b7a;
+  border: 0.04rem solid #8279f7;
+  top: 2.3rem;
+  left: 50%;
+  text-align: center;
+  margin-left: -1.2rem;
+  color: #f6c53c;
+  font: 0.22rem/0.49rem "Microsoft YaHei"; }
+
+.m-header .headimg {
+  position: absolute;
+  top: 2.75rem;
+  right: 0.23rem;
+  border-radius: 50%;
+  width: 0.97rem;
+  height: 0.97rem; }
+
+.m-header .glass {
+  background: url(../images/glass-bg.png) no-repeat;
+  width: 4.03rem;
+  height: 3.55rem;
+  position: absolute;
+  top: 2.68rem;
+  left: 50%;
+  margin-left: -1.95rem;
+  background-size: contain; }
+
+.m-header .ball {
+  width: 3.62rem;
+  height: 2.14rem;
+  position: absolute;
+  top: 3.7rem;
+  left: 50%;
+  margin-left: -1.78rem;
+  background: url(../images/ball.png) no-repeat;
+  background-size: cover;
+  animation: ball 1s steps(1, start) infinite; }
+
+@keyframes ball {
+  0% {
+    background-position: 0 0; }
+  16.7% {
+    background-position: -3.62rem 0; }
+  33.3% {
+    background-position: -7.24rem 0; }
+  50% {
+    background-position: -10.86rem 0; }
+  66.73% {
+    background-position: -14.48rem 0; }
+  83.43% {
+    background-position: -18.1rem 0; } }
+
+.game-box {
+  position: absolute;
+  top: 6.18rem;
+  left: 50%;
+  width: 5.13rem;
+  margin-left: -2.56rem; }
+  .game-box .boardcast {
+    width: 4.52rem;
+    height: 0.45rem;
+    border-radius: 0.08rem;
+    background-color: #d73f16;
+    margin: 0.2rem auto 0.1rem;
+    position: relative;
+    overflow: hidden; }
+    .game-box .boardcast .icon {
+      display: block;
+      position: absolute;
+      left: 0.15rem;
+      top: 0.12rem;
+      background-position: 88.84462% 25.08532%;
+      width: 0.3rem;
+      height: 0.21rem; }
+  .game-box .btn-yxdp {
+    float: left;
+    margin: 0.05rem 0.12rem 0 0;
+    text-indent: -99.99rem;
+    background-position: 0 60.27397%;
+    width: 1.69rem;
+    height: 1.69rem; }
+  .game-box .btn-download {
+    float: left;
+    margin: 0.05rem 0 0.1rem 0.12rem;
+    text-indent: -99.99rem;
+    background-position: 0 32.88201%;
+    width: 3.15rem;
+    height: 0.9rem; }
+  .game-box .down-info {
+    text-align: center;
+    color: #fff;
+    font: 0.24rem/1.5 "Microsoft YaHei"; }
+  .game-box .txt {
+    color: #ffc8b5;
+    font: 0.22rem/0.45rem "Microsoft YaHei";
+    text-align: center; }
+    .game-box .txt span {
+      color: #fff04d; }
+  .game-box .info {
+    text-align: center;
+    color: #ffc8b5;
+    font: 0.2rem/1 "Microsoft YaHei"; }
+  .game-box .opt-btn {
+    width: 4.92rem;
+    margin: 0.1rem auto; }
+    .game-box .opt-btn a {
+      display: block;
+      text-indent: -99.99rem;
+      float: left; }
+  .game-box .btn-niudan {
+    background-position: 100% 0;
+    width: 2.35rem;
+    height: 0.9rem;
+    margin-right: 0.2rem; }
+  .game-box .btn-buy {
+    background-position: 31.68498% 51.06383%;
+    width: 2.37rem;
+    height: 0.9rem; }
+  .game-box .game-info {
+    width: 4.92rem;
+    margin: 0.1rem auto; }
+    .game-box .game-info .txt {
+      color: #ffc8b5;
+      font: 0.22rem/2 "Microsoft YaHei";
+      text-align: center; }
+    .game-box .game-info .navigation {
+      position: absolute;
+      background-position: 0 78.45601%;
+      width: 4.82rem;
+      height: 0.5rem; }
+
+.g-libao {
+  background: url(../images/libao_bg.png) no-repeat;
+  width: 5.49rem;
+  height: 5.8rem;
+  background-size: contain;
+  margin: 0.1rem auto;
+  position: relative; }
+  .g-libao .btn-pack {
+    text-indent: -99.99rem;
+    display: block;
+    position: absolute;
+    right: 0.28rem;
+    top: 0.8rem;
+    background-position: 51.04% 30.90909%;
+    width: 1.58rem;
+    height: 0.57rem; }
+  .g-libao .libao-list {
+    padding: 1.56rem 0 0 0.6rem; }
+    .g-libao .libao-list li {
+      float: left;
+      width: 1.9rem;
+      margin: 0 0.5rem 0.25rem 0; }
+    .g-libao .libao-list .libao-img {
+      width: 1.9rem;
+      height: 1.16rem;
+      border-radius: 0.08rem;
+      background-color: #ed974d;
+      box-shadow: inset 0 0 0.15rem 0.01rem #c85018;
+      overflow: hidden; }
+      .g-libao .libao-list .libao-img img {
+        display: block;
+        width: 1.1rem;
+        height: 0.9rem;
+        margin: 0.13rem auto; }
+    .g-libao .libao-list .libao-txt {
+      width: 1.5rem;
+      height: 0.5rem;
+      overflow: hidden;
+      margin: 0 auto;
+      color: #a84001;
+      text-align: center;
+      font: 0.22rem/1.2 "Microsoft YaHei"; }
+      .g-libao .libao-list .libao-txt span {
+        display: inline;
+        color: #fff583; }
+
+.g-changke {
+  background: url(../images/changke_bg.png) no-repeat;
+  width: 5.48rem;
+  height: 7.17rem;
+  background-size: contain;
+  margin: 0.1rem auto; }
+  .g-changke .changke-list {
+    padding: 1rem 0 0 0.48rem; }
+    .g-changke .changke-list li {
+      float: left;
+      width: 1.26rem;
+      margin: 0 0.35rem 0.35rem 0; }
+    .g-changke .changke-list img {
+      width: 1.26rem;
+      height: 1.26rem;
+      border-radius: 50%; }
+    .g-changke .changke-list .txt {
+      text-align: center;
+      color: #a84001;
+      font: 0.22rem/1.5 "Microsoft YaHei";
+      width: 1.26rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+
+.g-guize {
+  background: url(../images/guize_bg.png) no-repeat;
+  height: 4.27rem;
+  width: 5.48rem;
+  background-size: contain;
+  margin: 0.1rem auto; }
+  .g-guize .guize-list {
+    padding: 0.9rem 0 0 0.9rem;
+    width: 4.05rem;
+    counter-reset: sectioncounter; }
+    .g-guize .guize-list li {
+      color: #a84001;
+      font: 0.24rem/1.5 "Microsoft YaHei";
+      position: relative; }
+      .g-guize .guize-list li:before {
+        content: counter(sectioncounter);
+        counter-increment: sectioncounter;
+        display: block;
+        border-radius: 50%;
+        width: 0.3rem;
+        height: 0.3rem;
+        background-color: #fa592e;
+        color: #fff;
+        font: 0.24rem/0.3rem "Microsoft YaHei";
+        text-align: center;
+        position: absolute;
+        left: -0.4rem;
+        top: 0; }
+
+.g-canyu {
+  width: 5.44rem;
+  margin: 0.3rem auto 0; }
+  .g-canyu .icon-canyu {
+    margin: 0 auto;
+    background-position: 0 16.79245%;
+    width: 4.1rem;
+    height: 0.77rem; }
+  .g-canyu .step {
+    width: 5.44rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 0.25rem;
+    overflow: hidden; }
+  .g-canyu .step1 {
+    background-image: url(../images/step1.png);
+    height: 4.99rem; }
+  .g-canyu .step2 {
+    background-image: url(../images/step2.png);
+    height: 7.74rem; }
+  .g-canyu .step3 {
+    background-image: url(../images/step3.png);
+    height: 7.74rem; }
+
+.g-footer {
+  color: #4363a5;
+  font: 0.2rem/1.5 "Microsoft YaHei";
+  text-align: center; }
+  .g-footer .icon {
+    display: block;
+    margin: 0.4rem auto 0.1rem;
+    background-position: 33.14176% 61.51203%;
+    width: 2.61rem;
+    height: 0.25rem; }
+
+.dlg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+
+.dlg .mask {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.dlg-sell .dlg-content {
+  width: 5.44rem;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  margin-left: -2.72rem;
+  background: -webkit-gradient(linear, 50% 0, 50% 100%, from(#fd6f3e), to(#ea4a1f)); }
+
+.dlg-sell .dlg-header {
+  background-position: 0 0;
+  width: 5.44rem;
+  height: 0.85rem; }
+
+.dlg-sell .tip {
+  color: #ffc8b5;
+  font: 0.22rem/1.5 "Microsoft YaHei";
+  text-align: center; }
+
+.dlg-sell .niubi-list {
+  width: 4.93rem;
+  height: 1.37rem;
+  margin: 0.2rem auto;
+  background-color: #333935;
+  border-radius: 0.12rem;
+  border: 0.02rem solid #dccec4;
+  box-shadow: 0 0 0 0.04rem #333935, 0 -0.05rem 0 0.05rem #0b0d0a; }
+  .dlg-sell .niubi-list .h-img {
+    position: relative; }
+    .dlg-sell .niubi-list .h-img i {
+      display: block;
+      position: absolute; }
+    .dlg-sell .niubi-list .h-img .num {
+      color: #df4d1e;
+      font: 0.32rem/1.5 "Microsoft YaHei"; }
+  .dlg-sell .niubi-list .icon-niubi {
+    background-position: 92.52078% 39.85102%;
+    width: 0.61rem;
+    height: 0.7rem; }
+  .dlg-sell .niubi-list .icon-glow {
+    background-position: 82.15892% 43.58452%;
+    width: 1.16rem;
+    height: 1.16rem; }
+  .dlg-sell .niubi-list .txt {
+    color: #004891;
+    font: 0.2rem/0.31rem "Microsoft YaHei";
+    width: 1.18rem;
+    height: 0.31rem;
+    border-radius: 0.15rem;
+    background-color: #00a1fe; }
