@@ -1,10 +1,11 @@
 @charset "utf-8";
-$designWidth : 640;
-@function px( $px ){
+$designWidth: 640;
+@function px( $px ) {
   @return $px*320/$designWidth/20 + rem;
 }
 
-@import "spriterem";
+@import "btn_sprite";
+@import "icon_sprite";
 
 /* CSS reset */
 body {
@@ -32,13 +33,15 @@ fieldset, img {
   border: 0;
 }
 
-a,a:active {
+a, a:active {
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-a:active{
-  opacity:.9;
+
+a:active {
+  opacity: .9;
 }
+
 /* 要注意表单元素并不继承父级 font 的问题 */
 input, select, img {
   vertical-align: middle
@@ -187,6 +190,7 @@ html, body {
     background-position: px(-1810) 0;
   }
 }
+
 @-webkit-keyframes ball {
   0% {
     background-position: 0 0;
@@ -207,6 +211,7 @@ html, body {
     background-position: px(-1810) 0;
   }
 }
+
 .game-box {
   position: absolute;
   top: px(618);
@@ -243,7 +248,7 @@ html, body {
     margin: px(5) 0 px(10) px(12);
     text-indent: px(-9999);
     @include btn-download;
-    @extend %spritesheet;
+    @extend %spritesheet2;
   }
   .down-info {
     text-align: center;
@@ -274,16 +279,17 @@ html, body {
   }
   .btn-niudan {
     @include btn-niudan;
-    @extend %spritesheet;
+    @extend %spritesheet2;
     margin-right: px(20);
   }
   .btn-buy {
     @include btn-buy;
-    @extend %spritesheet;
+    @extend %spritesheet2;
   }
   .game-info {
     width: px(492);
     margin: px(10) auto;
+    position: relative;
     .txt {
       color: #ffc8b5;
       font: px(22)/2 "Microsoft YaHei";
@@ -291,8 +297,13 @@ html, body {
     }
     .navigation {
       position: absolute;
+      right: 0;
+      top: 0;
       @include navigation;
-      @extend %spritesheet;
+      @extend %spritesheet2;
+    }
+    .navigation2 {
+      left: 0;
     }
   }
 }
@@ -311,7 +322,7 @@ html, body {
     right: px(28);
     top: px(80);
     @include btn-pack;
-    @extend %spritesheet;
+    @extend %spritesheet2;
   }
   .libao-list {
     padding: px(156) 0 0 px(60);
@@ -377,7 +388,7 @@ html, body {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      margin-top:px(6);
+      margin-top: px(6);
     }
   }
 }
@@ -459,34 +470,29 @@ html, body {
 .dlg {
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, .8);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  display: none;
-}
-
-.dlg .mask {
-  background: rgba(0, 0, 0, .8);
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.dlg-sell {
+  overflow: hidden;
   .dlg-content {
     width: px(544);
     position: fixed;
     top: 10%;
     left: 50%;
     margin-left: px(-272);
-    background: -webkit-gradient(linear,50% 0,50% 100%,from(#fd6f3e),to(#ea4a1f));
+  }
+}
+
+.dlg-sell {
+  .dlg-content {
+    border-radius: 0 0 px(10) px(10);
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, from(#fd6f3e), to(#ea4a1f));
   }
   .dlg-header {
     @include dlg_sell;
-    @extend %spritesheet;
+    @extend %spritesheet2;
   }
   .tip {
     color: #ffc8b5;
@@ -494,39 +500,348 @@ html, body {
     text-align: center;
   }
   .niubi-list {
-    width:px(493);
-    height:px(137);
-    margin:px(20) auto;
+    width: px(493);
+    height: px(137);
+    margin: px(20) auto;
     background-color: #333935;
     border-radius: px(12);
     border: px(2) solid #dccec4;
-    box-shadow: 0 0 0 px(4) #333935 ,0 px(-5) 0 px(5) #0b0d0a;
-    .h-img{
+    box-shadow: 0 0 0 px(4) #333935, 0 px(-5) 0 px(5) #0b0d0a;
+    li {
+      float: left;
+      margin: 0 px(22);
+    }
+    .h-img {
       position: relative;
-      i{
+      top: px(-10);
+      left: px(-10);
+      height: px(100);
+      i {
         display: block;
         position: absolute;
       }
-      .num{
+      .num {
         color: #df4d1e;
-        font:px(32)/1.5 "Microsoft YaHei";
+        font: 700 px(32)/1.5 "Microsoft YaHei";
+        position: absolute;
+        left: px(86);
+        top: px(52);
       }
     }
-    .icon-niubi{
+    .icon-niubi {
       @include icon-niubi;
       @extend %spritesheet;
+      top: px(20);
+      left: px(26);
     }
-    .icon-glow{
+    .icon-glow {
       @include icon-glow;
       @extend %spritesheet;
     }
-    .txt{
+    .txt {
       color: #004891;
-      font:px(20)/px(31) "Microsoft YaHei";
-      width:px(118);
-      height:px(31);
+      font: px(20)/px(31) "Microsoft YaHei";
+      width: px(118);
+      height: px(31);
       border-radius: px(15);
       background-color: #00a1fe;
+      text-align: center;
+    }
+    .btn-goumai {
+      display: block;
+      margin-top: px(25);
+      @include btn-goumai;
+      @extend %spritesheet2;
+    }
+  }
+  .niubi-list2 {
+    margin-top: px(92);
+    .h-img2 {
+      .num {
+        color: #c5d1e7;
+      }
+      .icon-glow {
+        @include icon-glow2;
+      }
+    }
+    .h-img3 {
+      .num {
+        color: #fdc724;
+        @include icon-glow3;
+      }
+    }
+    .h-img4 {
+      .num {
+        color: #f88afb;
+        @include icon-glow4;
+      }
+    }
+  }
+  .dlg-footer {
+    clear: both;
+    position: relative;
+    height: px(70);
+    width: px(505);
+    margin: 0 auto;
+    .navigation {
+      position: absolute;
+      right: 0;
+      top: px(10);
+      @include navigation;
+      @extend %spritesheet2;
+    }
+    .navigation2 {
+      left: 0;
+    }
+    .txt {
+      color: #ffc8b5;
+      text-align: center;
+      font: px(22)/px(70) "Microsoft YaHei";
+    }
+  }
+}
+
+.dlg-msg {
+  .dlg-content {
+    border-radius: px(10);
+    background-color: #fff2c5;
+    top: 30%;
+    padding-bottom: px(35);
+    box-shadow: inset 0 0 px(15) 0 #e55100;
+    .dlg-header i {
+      display: block;
+      position: absolute;
+      @extend %spritesheet;
+    }
+    .icon-ball {
+      top: px(-36);
+      left: px(20);
+      @include icon-ball;
+    }
+    .icon-close {
+      top: px(15);
+      right: px(20);
+      @include icon-close2;
+      &:active {
+        margin-top: 5px;
+        @include icon-close;
+      }
+    }
+    .msg {
+      width: px(370);
+      color: #a84001;
+      font: px(28)/1.5 "Microsoft YaHei";
+      text-align: center;
+      margin: px(60) auto 0;
+      span {
+        color: #9e18b6;
+        font-weight: 700;
+      }
+    }
+    .opt-btn {
+      text-align: center;
+      height: px(90);
+      margin: px(28) auto 0;
+      a {
+        display: inline-block;
+        vertical-align: top;
+        text-indent: -9999px;
+        border-radius: px(40);
+        box-shadow: 0 px(6) 0 px(-1) #d6aa65;
+        @extend %spritesheet2;
+        &:active {
+          margin-top: px(5);
+          box-shadow: none;
+        }
+      }
+    }
+    .btn-gmnd {
+      @include btn-gmnd;
+      &:active {
+        margin-top: px(5);
+        box-shadow: none;
+      }
+    }
+    .btn-queding {
+      @include btn-queding;
+    }
+    .btn-quxiao {
+      box-shadow: none !important;
+      @include btn-quxiao;
+      &:active {
+        margin-top: 0 !important;
+      }
+    }
+    .btn-quduobao {
+      @include btn-duobao;
+    }
+    .btn-jxnd {
+      @include btn-jxnd;
+    }
+    .btn-qzlhq {
+      @include btn-qzlhq;
+      margin-bottom: px(27);
+      &:active {
+        margin-bottom: px(22);
+      }
+    }
+    .btn-msqcz {
+      @include btn-msqcz;
+    }
+  }
+}
+
+.dlg-gift {
+  .dlg-content {
+    .msg {
+      margin-top: px(100);
+    }
+    i {
+      left: px(222);
+      top: px(-20);
+    }
+    .icon-quan {
+      @include icon-quan;
+    }
+    .icon-hebi {
+      @include icon-hebi;
+    }
+    .icon-huizhang {
+      @include icon-huizhang;
+    }
+  }
+}
+
+.dlg-kqcz {
+  .dlg-content {
+    .opt-btn {
+      height: 200px;
+    }
+  }
+}
+
+.dlg-package {
+  .dlg-content {
+    background: #fb6a3a;
+    box-shadow: none;
+    width: px(510);
+    margin-left: px(-255);
+    top: 50%;
+    margin-top: -50%;
+    .dlg-header {
+      background: url(../images/package_bg.png) no-repeat;
+      background-size: contain;
+      height: px(186);
+      margin-top: px(-75);
+      position: relative;
+    }
+    .icon-close {
+      top: px(45);
+    }
+  }
+}
+
+.card-tab {
+  width: px(465);
+  margin: 0 auto;
+  .tab-nav {
+    text-align: center;
+    height: px(86);
+    a {
+      display: inline-block;
+      vertical-align: top;
+      width: px(205);
+      height: px(70);
+      text-align: center;
+      border: px(2) solid #fff1d2;
+      border-radius: px(18);
+    }
+    i {
+      display: inline-block;
+      margin-top: px(20);
+      @extend %spritesheet;
+    }
+    .cur {
+      box-shadow: 0 px(6) 0 px(-1) #df4514;
+      background-color: #fff1d2;
+      &:active {
+        margin-top: px(3);
+        box-shadow: none;
+      }
+      .icon-wdjl {
+        @include icon-wdjl;
+      }
+      .icon-suipian {
+        @include icon-suipian2;
+      }
+    }
+  }
+  .icon-wdjl {
+    @include icon-wdjl2;
+  }
+  .icon-suipian {
+    @include icon-suipian;
+  }
+  .list {
+    border-radius: px(20);
+    background-color: #fff1d2;
+    height: px(480);
+    li:first-child {
+      border-top: 0;
+    }
+    li {
+      padding: px(15) 0;
+      margin: 0 px(25);
+      border-top: px(2) dashed #fd6f3e;
+    }
+    a {
+      float: right;
+      width: px(94);
+      height: px(50);
+      border-radius: px(10);
+      text-align: center;
+      font: px(22)/px(50) "Microsoft YaHei";
+    }
+    .txt {
+      color: #fd6f3e;
+      font: px(24)/1.5 "Microsoft YaHei";
+    }
+    .btn-receive {
+      color: #fff;
+      background-color: #82c2ff;
+    }
+    .btn-received {
+      color: #df4514;
+      background-color: #f7e3b7;
+    }
+    .btn-address {
+      width: px(158);
+    }
+  }
+
+  .pager {
+    li {
+      float: left;
+    }
+    a, span {
+      display: block;
+      width: px(40);
+      height: px(42);
+      border-radius: 0 0 px(10) px(10);
+      text-align: center;
+      color: #fff1d2;
+      font: px(22)/px(42) "Microsoft YaHei";
+    }
+    .cur,.last  {
+      background-color: #fd763f;
+      box-shadow: 0 px(6) 0 px(-1) #df4514;
+      &:active {
+        margin-top: px(5);
+        box-shadow: none;
+      }
+    }
+    .last {
+      width: px(64);
     }
   }
 }

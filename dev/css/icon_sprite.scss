@@ -1,0 +1,115 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+            @mixin icon-ball {
+                background-position: -148/(125-530)*100% -356/(81-476)*100%;;
+                width: px(125);
+                height: px(81);
+            }
+            @mixin icon-canyu {
+                background-position: 0 0;
+                width: px(410);
+                height: px(77);
+            }
+            @mixin icon-close {
+                background-position: -277/(41-530)*100% -356/(41-476)*100%;;
+                width: px(41);
+                height: px(41);
+            }
+            @mixin icon-close2 {
+                background-position: -367/(41-530)*100% -81/(44-476)*100%;;
+                width: px(41);
+                height: px(44);
+            }
+            @mixin icon-glow {
+                background-position: -414/(116-530)*100% -120/(116-476)*100%;;
+                width: px(116);
+                height: px(116);
+            }
+            @mixin icon-glow2 {
+                background-position: -294/(116-530)*100% -183/(116-476)*100%;;
+                width: px(116);
+                height: px(116);
+            }
+            @mixin icon-glow3 {
+                background-position: -414/(116-530)*100% 0;
+                width: px(116);
+                height: px(116);
+            }
+            @mixin icon-glow4 {
+                background-position: -173/(117-530)*100% -183/(116-476)*100%;;
+                width: px(117);
+                height: px(116);
+            }
+            @mixin icon-hebi {
+                background-position: -414/(100-530)*100% -240/(87-476)*100%;;
+                width: px(100);
+                height: px(87);
+            }
+            @mixin icon-huizhang {
+                background-position: 0 -81/(98-476)*100%;;
+                width: px(298);
+                height: px(98);
+            }
+            @mixin icon-laba {
+                background-position: -414/(30-530)*100% -331/(21-476)*100%;;
+                width: px(30);
+                height: px(21);
+            }
+            @mixin icon-niubi {
+                background-position: -302/(61-530)*100% -81/(70-476)*100%;;
+                width: px(61);
+                height: px(70);
+            }
+            @mixin icon-quan {
+                background-position: 0 -356/(91-476)*100%;;
+                width: px(144);
+                height: px(91);
+            }
+            @mixin icon-suipian {
+                background-position: -322/(53-530)*100% -356/(27-476)*100%;;
+                width: px(53);
+                height: px(27);
+            }
+            @mixin icon-suipian2 {
+                background-position: -379/(53-530)*100% -356/(27-476)*100%;;
+                width: px(53);
+                height: px(27);
+            }
+            @mixin icon-wdjl {
+                background-position: -173/(115-530)*100% -303/(27-476)*100%;;
+                width: px(115);
+                height: px(27);
+            }
+            @mixin icon-wdjl2 {
+                background-position: -292/(115-530)*100% -303/(27-476)*100%;;
+                width: px(115);
+                height: px(27);
+            }
+            @mixin icon-wenzi {
+                background-position: 0 -451/(25-476)*100%;;
+                width: px(261);
+                height: px(25);
+            }
+            @mixin icon-yxdq {
+                background-position: 0 -183/(169-476)*100%;;
+                width: px(169);
+                height: px(169);
+            }
+        %spritesheet {
+            background-image: url('../images/icon_sprite.png');
+            background-repeat: no-repeat;
+            background-size: px(530) px(476);
+        }
+
+

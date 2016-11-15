@@ -11,22 +11,170 @@
     <link rel="stylesheet" href="/release/css/style.css">
 </head>
 <body>
-<section class="dlg dlg-sell">
-    <div class="mask"></div>
+<section class="dlg dlg-sell" style="display: none;">
     <div class="dlg-content">
         <div class="dlg-header"><a href="javascipt:" class="btn-close"></a></div>
         <p class="tip">两枚扭蛋币可摇一次扭蛋噢~</p>
-        <ul class="niubi-list">
+        <ul class="niubi-list clearfix">
             <li>
                 <div class="h-img">
-                    <i class="icon-niubi"></i>
                     <i class="icon-glow"></i>
+                    <i class="icon-niubi"></i>
+                    <p class="num">X2</p>
+                </div>
+                <p class="txt">10盒币</p>
+                <a href="javascript:" class="btn-goumai"></a>
+            </li>
+            <li>
+                <div class="h-img">
+                    <i class="icon-glow"></i>
+                    <i class="icon-niubi"></i>
+                    <p class="num">X2</p>
+                </div>
+                <p class="txt">10盒币</p>
+                <a href="javascript:" class="btn-goumai"></a>
+            </li>
+            <li>
+                <div class="h-img">
+                    <i class="icon-glow"></i>
+                    <i class="icon-niubi"></i>
                     <p class="num">X2</p>
                 </div>
                 <p class="txt">10盒币</p>
                 <a href="javascript:" class="btn-goumai"></a>
             </li>
         </ul>
+        <ul class="niubi-list niubi-list2 clearfix">
+            <li>
+                <div class="h-img h-img2">
+                    <i class="icon-glow"></i>
+                    <i class="icon-niubi"></i>
+                    <p class="num">X14</p>
+                </div>
+                <p class="txt">10盒币</p>
+                <a href="javascript:" class="btn-goumai"></a>
+            </li>
+            <li>
+                <div class="h-img h-img3">
+                    <i class="icon-glow"></i>
+                    <i class="icon-niubi"></i>
+                    <p class="num">X20</p>
+                </div>
+                <p class="txt">10盒币</p>
+                <a href="javascript:" class="btn-goumai"></a>
+            </li>
+            <li>
+                <div class="h-img h-img4">
+                    <i class="icon-glow"></i>
+                    <i class="icon-niubi"></i>
+                    <p class="num">X30</p>
+                </div>
+                <p class="txt">10盒币</p>
+                <a href="javascript:" class="btn-goumai"></a>
+            </li>
+        </ul>
+        <div class="dlg-footer">
+            <div class="navigation"></div>
+            <div class="navigation navigation2"></div>
+            <p class="txt">购买越多越划算噢~</p>
+        </div>
+    </div>
+</section>
+<section class="dlg dlg-msg" style="display: none;">
+    <div class="dlg-content">
+        <div class="dlg-header">
+            <i class="icon-ball"></i>
+            <i class="icon-close"></i>
+        </div>
+        <p class="msg">呜~没有扭蛋币了，不能摇扭蛋了，快去购买扭蛋币吧~</p>
+        <div class="opt-btn">
+            <a href="javascript:" class="btn-gmnd">购买扭蛋币</a>
+        </div>
+    </div>
+</section>
+<section class="dlg dlg-msg" style="display: none;">
+    <div class="dlg-content">
+        <div class="dlg-header">
+            <i class="icon-ball"></i>
+            <i class="icon-close"></i>
+        </div>
+        <p class="msg">确定要花费45盒币购买10枚扭蛋币吗？</p>
+        <div class="opt-btn">
+            <a href="javascript:" class="btn-queding">确定</a>
+            <a href="javascript:" class="btn-quxiao">取消</a>
+        </div>
+    </div>
+</section>
+<section class="dlg dlg-msg dlg-gift" style="display: none;">
+    <div class="dlg-content">
+        <div class="dlg-header">
+            <i class="icon-ball"></i>
+            <i class="icon-quan"></i>
+            <i class="icon-close"></i>
+        </div>
+        <p class="msg">恭喜获得价值5盒币<span>夺宝券</span>一张快去参与夺宝吧~</p>
+        <div class="opt-btn">
+            <a href="javascript:" class="btn-quduobao">去夺宝</a>
+        </div>
+    </div>
+</section>
+<section class="dlg dlg-msg dlg-gift" style="display: none;">
+    <div class="dlg-content">
+        <div class="dlg-header">
+            <i class="icon-ball"></i>
+            <i class="icon-hebi"></i>
+            <!--<i class="icon-huizhang"></i>-->
+            <i class="icon-close"></i>
+        </div>
+        <p class="msg">恭喜获得价值5盒币<span>夺宝券</span>一张快去参与夺宝吧~</p>
+        <div class="opt-btn">
+            <a href="javascript:" class="btn-jxnd">继续扭蛋</a>
+        </div>
+    </div>
+</section>
+<section class="dlg dlg-msg dlg-kqcz" style="display: none;">
+    <div class="dlg-content">
+        <div class="dlg-header">
+            <i class="icon-ball"></i>
+            <i class="icon-close"></i>
+        </div>
+        <p class="msg">呜~没有盒币了！需要盒币才能购买噢~</p>
+        <div class="opt-btn">
+            <a href="javascript:" class="btn-qzlhq">去赚零花钱</a>
+            <a href="javascript:" class="btn-msqcz">马上去充值</a>
+        </div>
+    </div>
+</section>
+<section class="dlg dlg-msg dlg-package">
+    <div class="dlg-content">
+        <div class="dlg-header">
+            <i class="icon-close"></i>
+        </div>
+        <div class="card-tab">
+            <div class="tab-nav">
+                <a href="javascript:" class="btn-jiangli"><i class="icon-wdjl"></i></a>
+                <a href="javascript:" class="btn-suipian cur"><i class="icon-suipian"></i></a>
+            </div>
+            <div class="tab-content">
+                <div class="content">
+                    <ul class="list">
+                        <li><span class="txt">20盒币</span><a href="javascript:" class="btn-receive">领取</a></li>
+                        <li><span class="txt">20盒币</span><a href="javascript:" class="btn-received">已领取</a></li>
+                        <li><span class="txt">20盒币</span><a href="javascript:" class="btn-received">已领取</a></li>
+                        <li><span class="txt">20盒币</span><a href="javascript:" class="btn-received">已领取</a></li>
+                        <li><span class="txt">20盒币</span><a href="javascript:" class="btn-receive btn-address">填写收货地址</a></li>
+                        <li><span class="txt">20盒币</span><a href="javascript:" class="btn-receive btn-address">填写收货地址</a></li>
+                    </ul>
+                    <ul class="pager clearfix">
+                        <li><span class="cur">1</span></li>
+                        <li><a href="javascript:">2</a></li>
+                        <li><a href="javascript:">3</a></li>
+                        <li><a href="javascript:">4</a></li>
+                        <li><span class="last">尾页</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <section class="g-header">
@@ -52,6 +200,7 @@
             </div>
             <div class="game-info">
                 <div class="navigation"></div>
+                <div class="navigation navigation2"></div>
                 <p class="txt">还剩10枚扭蛋币，可摇扭蛋5次</p>
             </div>
         </div>

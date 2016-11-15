@@ -12,10 +12,28 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
-.game-box .boardcast .icon, .game-box .btn-yxdp, .game-box .btn-download, .game-box .btn-niudan, .game-box .btn-buy, .game-box .game-info .navigation, .g-libao .btn-pack, .g-canyu .icon-canyu, .g-footer .icon, .dlg-sell .dlg-header, .dlg-sell .niubi-list .icon-niubi, .dlg-sell .niubi-list .icon-glow {
-  background-image: url("../images/sprite.png");
+.game-box .btn-download, .game-box .btn-niudan, .game-box .btn-buy, .game-box .game-info .navigation, .g-libao .btn-pack, .dlg-sell .dlg-header, .dlg-sell .niubi-list .btn-goumai, .dlg-sell .dlg-footer .navigation, .dlg-msg .dlg-content .opt-btn a {
+  background-image: url("../images/btn_sprite.png");
   background-repeat: no-repeat;
-  background-size: 19.575rem 15.175rem; }
+  background-size: 17.65rem 13.5rem; }
+
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+.game-box .boardcast .icon, .game-box .btn-yxdp, .g-canyu .icon-canyu, .g-footer .icon, .dlg-sell .niubi-list .icon-niubi, .dlg-sell .niubi-list .icon-glow, .dlg-msg .dlg-content .dlg-header i, .card-tab .tab-nav i {
+  background-image: url("../images/icon_sprite.png");
+  background-repeat: no-repeat;
+  background-size: 13.25rem 11.9rem; }
 
 /* CSS reset */
 body {
@@ -200,21 +218,21 @@ html, body {
       position: absolute;
       left: 0.375rem;
       top: 0.3rem;
-      background-position: 88.84462% 25.08532%;
+      background-position: 82.8% 72.74725%;
       width: 0.75rem;
       height: 0.525rem; }
   .game-box .btn-yxdp {
     float: left;
     margin: 0.125rem 0.3rem 0 0;
     text-indent: -249.975rem;
-    background-position: 0 60.27397%;
+    background-position: 0 59.60912%;
     width: 4.225rem;
     height: 4.225rem; }
   .game-box .btn-download {
     float: left;
     margin: 0.125rem 0 0.25rem 0.3rem;
     text-indent: -249.975rem;
-    background-position: 0 32.88201%;
+    background-position: 0 19.77778%;
     width: 7.875rem;
     height: 2.25rem; }
   .game-box .down-info {
@@ -239,26 +257,31 @@ html, body {
       text-indent: -249.975rem;
       float: left; }
   .game-box .btn-niudan {
-    background-position: 100% 0;
+    background-position: 51.16773% 80.22222%;
     width: 5.875rem;
     height: 2.25rem;
     margin-right: 0.5rem; }
   .game-box .btn-buy {
-    background-position: 31.68498% 51.06383%;
+    background-position: 0 80.22222%;
     width: 5.925rem;
     height: 2.25rem; }
   .game-box .game-info {
     width: 12.3rem;
-    margin: 0.25rem auto; }
+    margin: 0.25rem auto;
+    position: relative; }
     .game-box .game-info .txt {
       color: #ffc8b5;
       font: 0.55rem/2 "Microsoft YaHei";
       text-align: center; }
     .game-box .game-info .navigation {
       position: absolute;
-      background-position: 0 78.45601%;
-      width: 12.05rem;
+      right: 0;
+      top: 0;
+      background-position: 86.29921% 23.26531%;
+      width: 1.775rem;
       height: 1.25rem; }
+    .game-box .game-info .navigation2 {
+      left: 0; }
 
 .g-libao {
   background: url(../images/libao_bg.png) no-repeat;
@@ -273,9 +296,9 @@ html, body {
     position: absolute;
     right: 0.7rem;
     top: 2rem;
-    background-position: 51.04% 30.90909%;
-    width: 4rem;
-    height: 1.45rem; }
+    background-position: 100% 0;
+    width: 3.95rem;
+    height: 1.425rem; }
   .g-libao .libao-list {
     padding: 3.9rem 0 0 1.5rem; }
     .g-libao .libao-list li {
@@ -366,7 +389,7 @@ html, body {
   margin: 0.75rem auto 0; }
   .g-canyu .icon-canyu {
     margin: 0 auto;
-    background-position: 0 16.79245%;
+    background-position: 0 0;
     width: 10.25rem;
     height: 1.925rem; }
   .g-canyu .step {
@@ -392,33 +415,28 @@ html, body {
   .g-footer .icon {
     display: block;
     margin: 1rem auto 0.25rem;
-    background-position: 33.14176% 61.51203%;
+    background-position: 0 100%;
     width: 6.525rem;
     height: 0.625rem; }
 
 .dlg {
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  display: none; }
-
-.dlg .mask {
-  background: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0; }
+  overflow: hidden; }
+  .dlg .dlg-content {
+    width: 13.6rem;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    margin-left: -6.8rem; }
 
 .dlg-sell .dlg-content {
-  width: 13.6rem;
-  position: fixed;
-  top: 10%;
-  left: 50%;
-  margin-left: -6.8rem;
+  border-radius: 0 0 0.25rem 0.25rem;
   background: -webkit-gradient(linear, 50% 0, 50% 100%, from(#fd6f3e), to(#ea4a1f)); }
 
 .dlg-sell .dlg-header {
@@ -439,20 +457,31 @@ html, body {
   border-radius: 0.3rem;
   border: 0.05rem solid #dccec4;
   box-shadow: 0 0 0 0.1rem #333935, 0 -0.125rem 0 0.125rem #0b0d0a; }
+  .dlg-sell .niubi-list li {
+    float: left;
+    margin: 0 0.55rem; }
   .dlg-sell .niubi-list .h-img {
-    position: relative; }
+    position: relative;
+    top: -0.25rem;
+    left: -0.25rem;
+    height: 2.5rem; }
     .dlg-sell .niubi-list .h-img i {
       display: block;
       position: absolute; }
     .dlg-sell .niubi-list .h-img .num {
       color: #df4d1e;
-      font: 0.8rem/1.5 "Microsoft YaHei"; }
+      font: 700 0.8rem/1.5 "Microsoft YaHei";
+      position: absolute;
+      left: 2.15rem;
+      top: 1.3rem; }
   .dlg-sell .niubi-list .icon-niubi {
-    background-position: 92.52078% 39.85102%;
+    background-position: 64.39232% 19.95074%;
     width: 1.525rem;
-    height: 1.75rem; }
+    height: 1.75rem;
+    top: 0.5rem;
+    left: 0.65rem; }
   .dlg-sell .niubi-list .icon-glow {
-    background-position: 82.15892% 43.58452%;
+    background-position: 100% 33.33333%;
     width: 2.9rem;
     height: 2.9rem; }
   .dlg-sell .niubi-list .txt {
@@ -461,4 +490,263 @@ html, body {
     width: 2.95rem;
     height: 0.775rem;
     border-radius: 0.375rem;
-    background-color: #00a1fe; }
+    background-color: #00a1fe;
+    text-align: center; }
+  .dlg-sell .niubi-list .btn-goumai {
+    display: block;
+    margin-top: 0.625rem;
+    background-position: 92.41147% 12.42363%;
+    width: 2.825rem;
+    height: 1.225rem; }
+
+.dlg-sell .niubi-list2 {
+  margin-top: 2.3rem; }
+  .dlg-sell .niubi-list2 .h-img2 .num {
+    color: #c5d1e7; }
+  .dlg-sell .niubi-list2 .h-img2 .icon-glow {
+    background-position: 71.01449% 50.83333%;
+    width: 2.9rem;
+    height: 2.9rem; }
+  .dlg-sell .niubi-list2 .h-img3 .num {
+    color: #fdc724;
+    background-position: 100% 0;
+    width: 2.9rem;
+    height: 2.9rem; }
+  .dlg-sell .niubi-list2 .h-img4 .num {
+    color: #f88afb;
+    background-position: 41.88862% 50.83333%;
+    width: 2.925rem;
+    height: 2.9rem; }
+
+.dlg-sell .dlg-footer {
+  clear: both;
+  position: relative;
+  height: 1.75rem;
+  width: 12.625rem;
+  margin: 0 auto; }
+  .dlg-sell .dlg-footer .navigation {
+    position: absolute;
+    right: 0;
+    top: 0.25rem;
+    background-position: 86.29921% 23.26531%;
+    width: 1.775rem;
+    height: 1.25rem; }
+  .dlg-sell .dlg-footer .navigation2 {
+    left: 0; }
+  .dlg-sell .dlg-footer .txt {
+    color: #ffc8b5;
+    text-align: center;
+    font: 0.55rem/1.75rem "Microsoft YaHei"; }
+
+.dlg-msg .dlg-content {
+  border-radius: 0.25rem;
+  background-color: #fff2c5;
+  top: 30%;
+  padding-bottom: 0.875rem;
+  box-shadow: inset 0 0 0.375rem 0 #e55100; }
+  .dlg-msg .dlg-content .dlg-header i {
+    display: block;
+    position: absolute; }
+  .dlg-msg .dlg-content .icon-ball {
+    top: -0.9rem;
+    left: 0.5rem;
+    background-position: 36.54321% 90.12658%;
+    width: 3.125rem;
+    height: 2.025rem; }
+  .dlg-msg .dlg-content .icon-close {
+    top: 0.375rem;
+    right: 0.5rem;
+    background-position: 75.05112% 18.75%;
+    width: 1.025rem;
+    height: 1.1rem; }
+    .dlg-msg .dlg-content .icon-close:active {
+      margin-top: 5px;
+      background-position: 56.64622% 81.83908%;
+      width: 1.025rem;
+      height: 1.025rem; }
+  .dlg-msg .dlg-content .msg {
+    width: 9.25rem;
+    color: #a84001;
+    font: 0.7rem/1.5 "Microsoft YaHei";
+    text-align: center;
+    margin: 1.5rem auto 0; }
+    .dlg-msg .dlg-content .msg span {
+      color: #9e18b6;
+      font-weight: 700; }
+  .dlg-msg .dlg-content .opt-btn {
+    text-align: center;
+    height: 2.25rem;
+    margin: 0.7rem auto 0; }
+    .dlg-msg .dlg-content .opt-btn a {
+      display: inline-block;
+      vertical-align: top;
+      text-indent: -9999px;
+      border-radius: 1rem;
+      box-shadow: 0 0.15rem 0 -0.025rem #d6aa65; }
+      .dlg-msg .dlg-content .opt-btn a:active {
+        margin-top: 0.125rem;
+        box-shadow: none; }
+  .dlg-msg .dlg-content .btn-gmnd {
+    background-position: 59.48827% 40.21978%;
+    width: 5.925rem;
+    height: 2.125rem; }
+    .dlg-msg .dlg-content .btn-gmnd:active {
+      margin-top: 0.125rem;
+      box-shadow: none; }
+  .dlg-msg .dlg-content .btn-queding {
+    background-position: 46.77104% 100%;
+    width: 4.875rem;
+    height: 2.125rem; }
+  .dlg-msg .dlg-content .btn-quxiao {
+    box-shadow: none !important;
+    background-position: 62.42661% 19.77778%;
+    width: 4.875rem;
+    height: 2.25rem; }
+    .dlg-msg .dlg-content .btn-quxiao:active {
+      margin-top: 0 !important; }
+  .dlg-msg .dlg-content .btn-quduobao {
+    background-position: 59.48827% 59.78022%;
+    width: 5.925rem;
+    height: 2.125rem; }
+  .dlg-msg .dlg-content .btn-jxnd {
+    background-position: 0 100%;
+    width: 5.875rem;
+    height: 2.125rem; }
+  .dlg-msg .dlg-content .btn-qzlhq {
+    background-position: 0 40.21978%;
+    width: 6.875rem;
+    height: 2.125rem;
+    margin-bottom: 0.675rem; }
+    .dlg-msg .dlg-content .btn-qzlhq:active {
+      margin-bottom: 0.55rem; }
+  .dlg-msg .dlg-content .btn-msqcz {
+    background-position: 0 59.78022%;
+    width: 6.875rem;
+    height: 2.125rem; }
+
+.dlg-gift .dlg-content .msg {
+  margin-top: 2.5rem; }
+
+.dlg-gift .dlg-content i {
+  left: 5.55rem;
+  top: -0.5rem; }
+
+.dlg-gift .dlg-content .icon-quan {
+  background-position: 0 92.46753%;
+  width: 3.6rem;
+  height: 2.275rem; }
+
+.dlg-gift .dlg-content .icon-hebi {
+  background-position: 96.27907% 61.69666%;
+  width: 2.5rem;
+  height: 2.175rem; }
+
+.dlg-gift .dlg-content .icon-huizhang {
+  background-position: 0 21.42857%;
+  width: 7.45rem;
+  height: 2.45rem; }
+
+.dlg-kqcz .dlg-content .opt-btn {
+  height: 200px; }
+
+.dlg-package .dlg-content {
+  background: #fb6a3a;
+  box-shadow: none;
+  width: 12.75rem;
+  margin-left: -6.375rem;
+  top: 50%;
+  margin-top: -50%; }
+  .dlg-package .dlg-content .dlg-header {
+    background: url(../images/package_bg.png) no-repeat;
+    background-size: contain;
+    height: 4.65rem;
+    margin-top: -1.875rem;
+    position: relative; }
+  .dlg-package .dlg-content .icon-close {
+    top: 1.125rem; }
+
+.card-tab {
+  width: 11.625rem;
+  margin: 0 auto; }
+  .card-tab .tab-nav {
+    text-align: center;
+    height: 2.15rem; }
+    .card-tab .tab-nav a {
+      display: inline-block;
+      vertical-align: top;
+      width: 5.125rem;
+      height: 1.75rem;
+      text-align: center;
+      border: 0.05rem solid #fff1d2;
+      border-radius: 0.45rem; }
+    .card-tab .tab-nav i {
+      display: inline-block;
+      margin-top: 0.5rem; }
+    .card-tab .tab-nav .cur {
+      box-shadow: 0 0.15rem 0 -0.025rem #df4514;
+      background-color: #fff1d2; }
+      .card-tab .tab-nav .cur:active {
+        margin-top: 0.075rem;
+        box-shadow: none; }
+      .card-tab .tab-nav .cur .icon-wdjl {
+        background-position: 41.68675% 67.4833%;
+        width: 2.875rem;
+        height: 0.675rem; }
+      .card-tab .tab-nav .cur .icon-suipian {
+        background-position: 79.45493% 79.28731%;
+        width: 1.325rem;
+        height: 0.675rem; }
+  .card-tab .icon-wdjl {
+    background-position: 70.36145% 67.4833%;
+    width: 2.875rem;
+    height: 0.675rem; }
+  .card-tab .icon-suipian {
+    background-position: 67.50524% 79.28731%;
+    width: 1.325rem;
+    height: 0.675rem; }
+  .card-tab .list {
+    border-radius: 0.5rem;
+    background-color: #fff1d2;
+    height: 12rem; }
+    .card-tab .list li:first-child {
+      border-top: 0; }
+    .card-tab .list li {
+      padding: 0.375rem 0;
+      margin: 0 0.625rem;
+      border-top: 0.05rem dashed #fd6f3e; }
+    .card-tab .list a {
+      float: right;
+      width: 2.35rem;
+      height: 1.25rem;
+      border-radius: 0.25rem;
+      text-align: center;
+      font: 0.55rem/1.25rem "Microsoft YaHei"; }
+    .card-tab .list .txt {
+      color: #fd6f3e;
+      font: 0.6rem/1.5 "Microsoft YaHei"; }
+    .card-tab .list .btn-receive {
+      color: #fff;
+      background-color: #82c2ff; }
+    .card-tab .list .btn-received {
+      color: #df4514;
+      background-color: #f7e3b7; }
+    .card-tab .list .btn-address {
+      width: 3.95rem; }
+  .card-tab .pager li {
+    float: left; }
+  .card-tab .pager a, .card-tab .pager span {
+    display: block;
+    width: 1rem;
+    height: 1.05rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+    text-align: center;
+    color: #fff1d2;
+    font: 0.55rem/1.05rem "Microsoft YaHei"; }
+  .card-tab .pager .cur, .card-tab .pager .last {
+    background-color: #fd763f;
+    box-shadow: 0 0.15rem 0 -0.025rem #df4514; }
+    .card-tab .pager .cur:active, .card-tab .pager .last:active {
+      margin-top: 0.125rem;
+      box-shadow: none; }
+  .card-tab .pager .last {
+    width: 1.6rem; }

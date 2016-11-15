@@ -4,7 +4,6 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),  //重命名
     imagemin = require('gulp-imagemin'),  //图片压缩
     pngquant = require('imagemin-pngquant'), //深度压缩png图片
-    imageminJpegoptim = require('imagemin-jpegoptim'), //深度压缩jpg图片
     nano = require('gulp-cssnano'),    //css压缩
     uglify = require('gulp-uglify'),           //js压缩
     sprite2 = require('gulp-sprite2'),   //合并图片1
@@ -21,21 +20,19 @@ gulp.task('server', function() {
         server: "../"
     });
     gulp.watch("../*.html").on('change', reload);
-    gulp.watch("../release/css/*.css").on('change', reload);
+    gulp.watch("../release/**").on('change', reload);
 });
 
 //spriterem合并图片
 gulp.task('sprem',function(){
-    gulp.src('../dev/images/icon/*')
+    gulp.src('../dev/images/pic/icon/*')
         .pipe(spritesmith({
                 //间距
                 padding : 4,
                 //输出合并后图片的地址（相对于输出路径）
-                imgName: './images/sprite.png',
+                imgName: './images/icon_sprite.png',
                 //输出样式的地址（相对于输出路径）
-                cssName: './css/spriterem.scss',
-                //排列方式： binary-tree（默认），top-down，left-right，diagonal，alt-diagonal
-                algorithm: 'binary-tree',
+                cssName: './css/icon_sprite.scss',
                 //sass格式输出
                 cssFormat: 'scss',
                 //模板文件（相对于gulpfile的位置）
@@ -43,7 +40,25 @@ gulp.task('sprem',function(){
         }))
         .pipe( gulp.dest('../dev/') );
 });
-
+gulp.task('sprem2',function(){
+    gulp.src('../dev/images/pic/btn/*')
+        .pipe(spritesmith({
+            //间距
+            padding : 4,
+            //输出合并后图片的地址（相对于输出路径）
+            imgName: './images/btn_sprite.png',
+            //输出样式的地址（相对于输出路径）
+            cssName: './css/btn_sprite.scss',
+            //sass格式输出
+            cssFormat: 'scss',
+            //模板文件（相对于gulpfile的位置）
+            cssTemplate: 'scss2.handlebars'
+        }))
+        .pipe( gulp.dest('../dev/') );
+});
+gulp.task('watch-image',function(){
+    gulp.watch('../dev/images/**',['sprem','sprem2','image']);
+});
 //scss解析
 gulp.task('scss',function(){
     gulp.src('../dev/css/style.scss')
@@ -52,29 +67,6 @@ gulp.task('scss',function(){
 });
 gulp.task('watch-scss',function(){
     gulp.watch('../dev/css/*.scss',['scss']);
-});
-//spriter2合并图片
-gulp.task('css',function(){
-    gulp.src(['../dev/css/*.css'])
-        //.pipe(sass().on('error', sass.logError))
-
-        //合并图片
-        .pipe(sprite2({
-            'includeMode': 'implicit',
-            // 生成的spriter的位置
-            'spriteSheet': '../dev/images/spritesheet.png',
-            // 生成样式文件图片引用地址的路径
-            'pathToSpriteSheetFromCSS': '../images/spritesheet.png',
-            //排除的图片
-            'ignore':[ "../dev/images/*","../dev/images/slide/*","../dev/images/intro/*" ],
-            'spritesmithOptions': {
-                //图片的间距
-                padding : 4,  
-                //排列方式: binary-tree（默认），top-down，left-right，diagonal，alt-diagonal
-                algorithm: 'top-down'  
-            }
-        }))
-        .pipe( gulp.dest('../release/css/') );
 });
 
 
@@ -95,9 +87,7 @@ gulp.task('cssmin',function(){
 
 //图片压缩任务
 gulp.task('image',function(){
-    gulp.src('../dev/images/**')
-        .pipe(pngquant({floyd: 0.3})())
-        .pipe(imageminJpegoptim({progressive: true})())
+    gulp.src('../dev/images/*.[jpg|png]')
         .pipe( gulp.dest('../release/images/') );
 });
 

@@ -1,0 +1,90 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+            @mixin btn-buy {
+                background-position: 0 -361/(90-540)*100%;;
+                width: px(237);
+                height: px(90);
+            }
+            @mixin btn-download {
+                background-position: 0 -89/(90-540)*100%;;
+                width: px(315);
+                height: px(90);
+            }
+            @mixin btn-duobao {
+                background-position: -279/(237-706)*100% -272/(85-540)*100%;;
+                width: px(237);
+                height: px(85);
+            }
+            @mixin btn-gmnd {
+                background-position: -279/(237-706)*100% -183/(85-540)*100%;;
+                width: px(237);
+                height: px(85);
+            }
+            @mixin btn-goumai {
+                background-position: -548/(113-706)*100% -61/(49-540)*100%;;
+                width: px(113);
+                height: px(49);
+            }
+            @mixin btn-jxnd {
+                background-position: 0 -455/(85-540)*100%;;
+                width: px(235);
+                height: px(85);
+            }
+            @mixin btn-msqcz {
+                background-position: 0 -272/(85-540)*100%;;
+                width: px(275);
+                height: px(85);
+            }
+            @mixin btn-niudan {
+                background-position: -241/(235-706)*100% -361/(90-540)*100%;;
+                width: px(235);
+                height: px(90);
+            }
+            @mixin btn-pack {
+                background-position: -548/(158-706)*100% 0;
+                width: px(158);
+                height: px(57);
+            }
+            @mixin btn-queding {
+                background-position: -239/(195-706)*100% -455/(85-540)*100%;;
+                width: px(195);
+                height: px(85);
+            }
+            @mixin btn-quxiao {
+                background-position: -319/(195-706)*100% -89/(90-540)*100%;;
+                width: px(195);
+                height: px(90);
+            }
+            @mixin btn-qzlhq {
+                background-position: 0 -183/(85-540)*100%;;
+                width: px(275);
+                height: px(85);
+            }
+            @mixin dlg_sell {
+                background-position: 0 0;
+                width: px(544);
+                height: px(85);
+            }
+            @mixin navigation {
+                background-position: -548/(71-706)*100% -114/(50-540)*100%;;
+                width: px(71);
+                height: px(50);
+            }
+        %spritesheet2 {
+            background-image: url('../images/btn_sprite.png');
+            background-repeat: no-repeat;
+            background-size: px(706) px(540);
+        }
+
+
